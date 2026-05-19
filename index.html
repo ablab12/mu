@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Song Player</title>
+</head>
+<body>
+  <h1>Random Song</h1>
+
+  <audio id="player" controls autoplay></audio>
+
+  <script>
+    const songs = [
+      "muz/03.mp3",
+      "muz/04.mp3",
+	"muz/05.mp3",
+	"muz/06.mp3",
+      "muz/07.mp3"
+    ];
+
+    const randomSong =
+      songs[Math.floor(Math.random() * songs.length)];
+
+    document.getElementById("player").src = randomSong;
+  </script>
+</body>
+</html>
