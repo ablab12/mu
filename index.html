@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Random Song</title>
+  <title>Random Song Player</title>
 </head>
 <body>
-  <h1>Play Random Song</h1>
+  <h1>Random Song</h1>
 
-  <button onclick="playRandomSong()">
-    Play
-  </button>
-
-  <audio id="player" controls></audio>
+  <audio id="player" controls autoplay></audio>
 
   <script>
     const songs = [
-      "song1.mp3",
-      "song2.mp3",
-      "song3.mp3"
+  "muz/03.mp3",
+     "muz/04.mp3",
+	 "muz/05.mp3",
+	 "muz/06.mp3",
+     "muz/07.mp3"
     ];
 
-    function playRandomSong() {
-      const randomSong =
-        songs[Math.floor(Math.random() * songs.length)];
+    const randomSong =
+      songs[Math.floor(Math.random() * songs.length)];
 
-      const player =
-        document.getElementById("player");
-
-      player.src = randomSong;
-      player.play();
-    }
+    document.getElementById("player").src = randomSong;
   </script>
 </body>
 </html>
