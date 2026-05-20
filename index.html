@@ -4,31 +4,31 @@
   <title>Random Song</title>
 </head>
 <body>
+  <h1>Play Random Song</h1>
 
-  <audio id="player" autoplay></audio>
+  <button onclick="playRandomSong()">
+    Play
+  </button>
+
+  <audio id="player" controls></audio>
 
   <script>
     const songs = [
-   "muz/03.mp3",
-     "muz/04.mp3",
-	 "muz/05.mp3",
-	 "muz/06.mp3",
-     "muz/07.mp3"
+      "song1.mp3",
+      "song2.mp3",
+      "song3.mp3"
     ];
 
-    const randomSong =
-      songs[Math.floor(Math.random() * songs.length)];
+    function playRandomSong() {
+      const randomSong =
+        songs[Math.floor(Math.random() * songs.length)];
 
-    const player =
-      document.getElementById("player");
+      const player =
+        document.getElementById("player");
 
-    player.src = randomSong;
-
-    // force play
-    player.play().catch(error => {
-      console.log("Autoplay blocked:", error);
-    });
+      player.src = randomSong;
+      player.play();
+    }
   </script>
-
 </body>
 </html>
